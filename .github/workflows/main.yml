@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - master  # Запускается при каждом пуше в master
+  workflow_dispatch:
+    inputs:
+      browser:
+        type: choice
+        description: Which browser to test
+        required: true
+        options:
+          - firefox
+          - chromium
+          - webkit
 
 jobs:
   build:
@@ -11,16 +21,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'  # Устанавливаем Node.js
+          node-version: lts/*  # Устанавливаем Node.js
 
       - name: Install dependencies
         run: |
-          npm install  # Устанавливаем все зависимости для проекта
+          npm ci  # Устанавливаем все зависимости для проекта
 
       - name: Install Playwright browsers
         run: |
@@ -28,7 +38,14 @@ jobs:
 
       - name: Run Playwright tests
         run: |
-          npm test  # Запуск Playwright тестов через npm script
+          npx playwright test --project ${{ github.event.inputs.browser }}  # Запуск Playwright тестов через npm script
+      
+      - uses: actions/upload-artifact@v4  # отчёт о тестировании Playwright загружается в качестве артефакта. Условие if: always() гарантирует, что отчёт будет загружен, даже если тесты завершатся неудачно. Артефакт сохраняется в течение 30 дней.
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
 
       - name: Save test report
         run: |
