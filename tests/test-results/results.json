@@ -24,7 +24,7 @@
     ],
     "reportSlowTests": {
       "max": 5,
-      "threshold": 15000
+      "threshold": 300000
     },
     "quiet": false,
     "projects": [
@@ -32,7 +32,9 @@
         "outputDir": "C:/Projects/Playwright/PracticE/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "C:/Projects/Playwright/PracticE/tests",
@@ -46,7 +48,9 @@
         "outputDir": "C:/Projects/Playwright/PracticE/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "firefox",
         "name": "firefox",
         "testDir": "C:/Projects/Playwright/PracticE/tests",
@@ -60,7 +64,9 @@
         "outputDir": "C:/Projects/Playwright/PracticE/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 1
+        },
         "id": "webkit",
         "name": "webkit",
         "testDir": "C:/Projects/Playwright/PracticE/tests",
@@ -73,368 +79,77 @@
     ],
     "shard": null,
     "updateSnapshots": "missing",
-    "version": "1.49.1",
+    "updateSourceMethod": "patch",
+    "version": "1.51.0",
     "workers": 2,
     "webServer": null
   },
   "suites": [
     {
-      "title": "clickALL2.spec.js",
-      "file": "clickALL2.spec.js",
+      "title": "internet.spec.js",
+      "file": "internet.spec.js",
       "column": 0,
       "line": 0,
-      "specs": [],
-      "suites": [
+      "specs": [
         {
-          "title": "Click All Links on Internet Page",
-          "file": "clickALL2.spec.js",
-          "line": 3,
-          "column": 6,
-          "specs": [
+          "title": "dont forget",
+          "ok": true,
+          "tags": [],
+          "tests": [
             {
-              "title": "Click all links and verify navigation",
-              "ok": false,
-              "tags": [],
-              "tests": [
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
                 {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11595,
+                  "errors": [],
+                  "stdout": [
                     {
-                      "workerIndex": 0,
-                      "status": "timedOut",
-                      "duration": 30061,
-                      "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                      },
-                      "errors": [
-                        {
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
-                        },
-                        {
-                          "location": {
-                            "file": "C:\\Projects\\Playwright\\PracticE\\tests\\clickALL2.spec.js",
-                            "column": 28,
-                            "line": 19
-                          },
-                          "message": "Error: locator.isVisible: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m    - checking visibility of locator('a').nth(24)\u001b[22m\n\n\n\u001b[0m \u001b[90m 17 |\u001b[39m\n \u001b[90m 18 |\u001b[39m             \u001b[90m// Проверяем, видима ли ссылка\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m             \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m link\u001b[33m.\u001b[39misVisible()) {\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m                 \u001b[36mconst\u001b[39m linkText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m link\u001b[33m.\u001b[39minnerText()\u001b[33m;\u001b[39m\n \u001b[90m 21 |\u001b[39m                 console\u001b[33m.\u001b[39mlog(\u001b[32m`Нажимаем на ссылку [${i + 1}/${count}]: ${linkText}`\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 22 |\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Projects\\Playwright\\PracticE\\tests\\clickALL2.spec.js:19:28\u001b[22m"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "Общее количество ссылок: 46\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [2/46]: A/B Testing\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/abtest\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: A/B Test Control\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [3/46]: Add/Remove Elements\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/add_remove_elements/\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Add/Remove Elements\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [4/46]: Basic Auth\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/basic_auth\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [5/46]: Broken Images\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/broken_images\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Broken Images\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [6/46]: Challenging DOM\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/challenging_dom\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Challenging DOM\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [7/46]: Checkboxes\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/checkboxes\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Checkboxes\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [8/46]: Context Menu\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/context_menu\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Context Menu\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [9/46]: Digest Authentication\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/digest_auth\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [10/46]: Disappearing Elements\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/disappearing_elements\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Disappearing Elements\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [11/46]: Drag and Drop\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/drag_and_drop\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Drag and Drop\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [12/46]: Dropdown\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/dropdown\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Dropdown List\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [13/46]: Dynamic Content\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/dynamic_content\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Dynamic Content\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [14/46]: Dynamic Controls\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/dynamic_controls\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [15/46]: Dynamic Loading\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/dynamic_loading\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Dynamically Loaded Page Elements\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [16/46]: Entry Ad\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/entry_ad\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Entry Ad\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [17/46]: Exit Intent\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/exit_intent\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Exit Intent\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [18/46]: File Download\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/download\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: File Downloader\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [19/46]: File Upload\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/upload\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: File Uploader\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [20/46]: Floating Menu\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/floating_menu\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Floating Menu\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [21/46]: Forgot Password\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/forgot_password\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [22/46]: Form Authentication\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/login\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [23/46]: Frames\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/frames\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Frames\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        },
-                        {
-                          "text": "Нажимаем на ссылку [24/46]: Geolocation\n"
-                        },
-                        {
-                          "text": "Успешный переход: https://the-internet.herokuapp.com/geolocation\n"
-                        },
-                        {
-                          "text": "Элемент <h3> найден: Geolocation\n"
-                        },
-                        {
-                          "text": "Вернулись на главную страницу.\n"
-                        }
-                      ],
-                      "stderr": [
-                        {
-                          "text": "Ссылка [1/46] не видима, пропускаем.\n"
-                        },
-                        {
-                          "text": "Элемент <h3> не найден.\n"
-                        },
-                        {
-                          "text": "Элемент <h3> не найден.\n"
-                        },
-                        {
-                          "text": "Элемент <h3> не найден.\n"
-                        },
-                        {
-                          "text": "Элемент <h3> не найден.\n"
-                        },
-                        {
-                          "text": "Элемент <h3> не найден.\n"
-                        }
-                      ],
-                      "retry": 0,
-                      "startTime": "2025-01-17T21:47:56.366Z",
-                      "attachments": []
+                      "text": "Navigated to: https://the-internet.herokuapp.com/abtest\n"
+                    },
+                    {
+                      "text": "Basic Auth page verified\n"
+                    },
+                    {
+                      "text": "Login successful\n"
+                    },
+                    {
+                      "text": "Logout successful\n"
+                    },
+                    {
+                      "text": "finished\n"
                     }
                   ],
-                  "status": "unexpected"
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-03-11T18:01:08.273Z",
+                  "attachments": []
                 }
               ],
-              "id": "0824ed8e0166974b920a-1faad3ed19ab0633cb1c",
-              "file": "clickALL2.spec.js",
-              "line": 4,
-              "column": 5
+              "status": "expected"
             }
-          ]
+          ],
+          "id": "e94051aaff0a34c9d1fb-204135f34bb045f9fc94",
+          "file": "internet.spec.js",
+          "line": 5,
+          "column": 1
         }
       ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-01-17T21:47:54.209Z",
-    "duration": 32744.77,
-    "expected": 0,
+    "startTime": "2025-03-11T18:01:05.358Z",
+    "duration": 16163.892,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('Click All Links on Internet Page', () => {
     test('Click all links and verify navigation', async ({ page }) => {
         await page.goto('https://the-internet.herokuapp.com');
-        
+         
         // Получаем все ссылки
         const links = await page.locator('a');
         const count = await links.count();
